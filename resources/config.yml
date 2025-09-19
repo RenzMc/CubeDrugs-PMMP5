@@ -1,0 +1,118 @@
+# CubeDrugs Configuration File
+# Configure your drugs, prices, and effects here
+
+# Plugin settings
+settings:
+  # Plugin prefix shown in messages
+  prefix: "§7(§cSubstances§7)§r §f"
+  # Title shown in the UI
+  ui-title: "§7(§cSubstances§7)§r §bEntertainment Menu"
+  # Message shown when player doesn't have enough money
+  not-enough-money: "You don't have enough money to §e{action}"
+  # Message shown when player buys a drug
+  purchase-message: "{price} has been deducted from your account. You §e{action}"
+
+# Economy settings
+economy:
+  # Economy provider to use (economyapi, bedrockeconomy, coinapi)
+  provider: "economyapi"
+  # Currency symbol to use in messages
+  currency_symbol: "$"
+
+# Define all available drugs
+drugs:
+  vape:
+    name: "Vape"
+    price: 300
+    button-text: "§eUse Vape §f(§c{price}§f)"
+    action-text: "used a vape"
+    effects:
+      - effect: "poison"
+        duration: 15
+        amplifier: 1
+      - effect: "haste"
+        duration: 30
+        amplifier: 1
+      - effect: "jump_boost"
+        duration: 30
+        amplifier: 1
+      - effect: "regeneration"
+        duration: 30
+        amplifier: 1
+  
+  cigarette:
+    name: "Cigarette"
+    price: 100
+    button-text: "§eSmoke Cigarette §f(§c{price}§f)"
+    action-text: "smoked a cigarette"
+    effects:
+      - effect: "poison"
+        duration: 15
+        amplifier: 1
+      - effect: "nausea"
+        duration: 15
+        amplifier: 1
+      - effect: "regeneration"
+        duration: 30
+        amplifier: 1
+  
+  beer:
+    name: "Beer"
+    price: 250
+    button-text: "§eDrink Beer §f(§c{price}§f)"
+    action-text: "drank beer"
+    effects:
+      - effect: "poison"
+        duration: 15
+        amplifier: 1
+      - effect: "night_vision"
+        duration: 120
+        amplifier: 1
+      - effect: "absorption"
+        duration: 120
+        amplifier: 1
+      - effect: "regeneration"
+        duration: 30
+        amplifier: 1
+  
+  energy_drink:
+    name: "Energy Drink"
+    price: 300
+    button-text: "§eEnergy Drink §f(§c{price}§f)"
+    action-text: "consumed an energy drink"
+    effects:
+      - effect: "nausea"
+        duration: 15
+        amplifier: 1
+      - effect: "weakness"
+        duration: 15
+        amplifier: 1
+      - effect: "health_boost"
+        duration: 120
+        amplifier: 1
+      - effect: "regeneration"
+        duration: 30
+        amplifier: 1
+  
+  cannabis:
+    name: "Cannabis"
+    price: 400
+    button-text: "§eSmoke Cannabis §f(§c{price}§f)"
+    action-text: "smoked cannabis"
+    effects:
+      - effect: "slowness"
+        duration: 15
+        amplifier: 1
+      - effect: "weakness"
+        duration: 15
+        amplifier: 1
+      - effect: "blindness"
+        duration: 15
+        amplifier: 1
+  
+  clear_effects:
+    name: "Clear Effects"
+    price: 100
+    button-text: "§7Clear Effects §f(§c{price}§f)"
+    action-text: "cleared all effects"
+    effects: []

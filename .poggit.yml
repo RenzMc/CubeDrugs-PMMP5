@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/RenzMc/CubeDrugs-PMMP5
+build-by-default: true
+branches:
+- main
+projects:
+  CubeDrugs-PMMP5:
+    path: ""
+...

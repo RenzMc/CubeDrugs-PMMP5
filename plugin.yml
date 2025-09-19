@@ -1,0 +1,14 @@
+name: CubeDrugs
+main: phpcube\Main
+api: 5.0.0
+version: 2.0
+author: PHPCube, Renz
+description: A configurable drugs plugin for PocketMine-MP
+commands:
+  drugs:
+    description: Open the drugs menu
+    default: true
+    permission: "cube.drugs"
+permissions:
+  cube.drugs:
+    default: true
