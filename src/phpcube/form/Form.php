@@ -1,14 +1,20 @@
 <?php
 
-declare(strict_types=1);
+/**
+ * FormAPI - Vendored for PMMP-AI
+ * Original Author: jojoe77777
+ * Modified for integration into PMMP-AI plugin
+ */
+
+declare(strict_types = 1);
 
 namespace phpcube\form;
 
 use pocketmine\form\Form as IForm;
 use pocketmine\player\Player;
 
-abstract class Form implements IForm
-{
+abstract class Form implements IForm{
+
     /** @var array */
     protected $data = [];
     /** @var callable|null */
@@ -17,8 +23,7 @@ abstract class Form implements IForm
     /**
      * @param callable|null $callable
      */
-    public function __construct(?callable $callable)
-    {
+    public function __construct(?callable $callable) {
         $this->callable = $callable;
     }
 
@@ -28,36 +33,30 @@ abstract class Form implements IForm
      *
      * @param Player $player
      */
-    public function sendToPlayer(Player $player): void
-    {
+    public function sendToPlayer(Player $player) : void {
         $player->sendForm($this);
     }
 
-    public function getCallable(): ?callable
-    {
+    public function getCallable() : ?callable {
         return $this->callable;
     }
 
-    public function setCallable(?callable $callable)
-    {
+    public function setCallable(?callable $callable) {
         $this->callable = $callable;
     }
 
-    public function handleResponse(Player $player, $data): void
-    {
+    public function handleResponse(Player $player, $data) : void {
         $this->processData($data);
         $callable = $this->getCallable();
-        if ($callable !== null) {
+        if($callable !== null) {
             $callable($player, $data);
         }
     }
 
-    public function processData(&$data): void
-    {
+    public function processData(&$data) : void {
     }
 
-    public function jsonSerialize(): array
-    {
+    public function jsonSerialize() : array{
         return $this->data;
     }
 }
