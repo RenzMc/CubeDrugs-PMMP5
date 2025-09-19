@@ -72,7 +72,7 @@ class CustomForm extends Form
     {
         $this->addContent(["type" => "label", "text" => $text]);
         $this->labelMap[] = $label ?? count($this->labelMap);
-        $this->validationMethods[] = static fn($v) => $v === null;
+        $this->validationMethods[] = static fn ($v) => $v === null;
     }
 
     /**
@@ -88,7 +88,7 @@ class CustomForm extends Form
         }
         $this->addContent($content);
         $this->labelMap[] = $label ?? count($this->labelMap);
-        $this->validationMethods[] = static fn($v) => is_bool($v);
+        $this->validationMethods[] = static fn ($v) => is_bool($v);
     }
 
     /**
@@ -119,7 +119,7 @@ class CustomForm extends Form
         }
         $this->addContent($content);
         $this->labelMap[] = $label ?? count($this->labelMap);
-        $this->validationMethods[] = static fn($v) => (is_float($v) || is_int($v)) && $v >= $min && $v <= $max;
+        $this->validationMethods[] = static fn ($v) => (is_float($v) || is_int($v)) && $v >= $min && $v <= $max;
     }
 
     /**
@@ -136,7 +136,7 @@ class CustomForm extends Form
         }
         $this->addContent($content);
         $this->labelMap[] = $label ?? count($this->labelMap);
-        $this->validationMethods[] = static fn($v) => is_int($v) && isset($steps[$v]);
+        $this->validationMethods[] = static fn ($v) => is_int($v) && isset($steps[$v]);
     }
 
     /**
@@ -149,7 +149,7 @@ class CustomForm extends Form
     {
         $this->addContent(["type" => "dropdown", "text" => $text, "options" => $options, "default" => $default]);
         $this->labelMap[] = $label ?? count($this->labelMap);
-        $this->validationMethods[] = static fn($v) => is_int($v) && isset($options[$v]);
+        $this->validationMethods[] = static fn ($v) => is_int($v) && isset($options[$v]);
     }
 
     /**
@@ -169,7 +169,7 @@ class CustomForm extends Form
     ): void {
         $this->addContent(["type" => "input", "text" => $text, "placeholder" => $placeholder, "default" => $default]);
         $this->labelMap[] = $label ?? count($this->labelMap);
-        $this->validationMethods[] = static fn($v) => is_string($v);
+        $this->validationMethods[] = static fn ($v) => is_string($v);
     }
 
     /**
